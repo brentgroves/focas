@@ -33,6 +33,7 @@ namespace FanucFocasTutorial
             if (_ret == Focas1.EW_OK)
             {
                 Console.WriteLine("We are connected!");
+                Sample(511);
             }
             else
             {
@@ -42,5 +43,27 @@ namespace FanucFocasTutorial
             // Free the Focas handle
             Focas1.cnc_freelibhndl(_handle);
         }
+
+        /* number is variable number to be read. */
+        static short Sample(short number)
+        {
+            Focas1.ODBM macro = new Focas1.ODBM();
+            string strVal;
+            short ret;
+            ret = Focas1.cnc_rdmacro(_handle, number, 10, macro);
+            if (ret == Focas1.EW_OK)
+            {
+                strVal = string.Format("{0:d9}", Math.Abs(macro.mcr_val));
+                if (0 < macro.dec_val) strVal = strVal.Insert(9 - macro.dec_val, ".");
+                if (macro.mcr_val < 0) strVal = "-" + strVal;
+                Console.WriteLine("{0}", strVal);
+            }
+            else
+            {
+                Console.WriteLine("**********");
+            }
+            return (ret);
+        }
+
     }
 }
