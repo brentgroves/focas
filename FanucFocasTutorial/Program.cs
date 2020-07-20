@@ -33,7 +33,9 @@ namespace FanucFocasTutorial
             if (_ret == Focas1.EW_OK)
             {
                 Console.WriteLine("We are connected!");
-                Sample(511);
+                Sample(526);//cnc362 10.1.90.4
+                //Sample(511);//cnc422 10.1.90.5
+                //Sample(501);//cnc422 10.1.90.2
             }
             else
             {
