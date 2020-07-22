@@ -41,6 +41,9 @@
     <Reference Include="MQTTnet.Extensions.ManagedClient, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
       <HintPath>..\packages\MQTTnet.Extensions.ManagedClient.3.0.11\lib\net452\MQTTnet.Extensions.ManagedClient.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -101,6 +104,7 @@
     <Compile Include="CNCHardware.cs" />
     <Compile Include="fwlib32.cs" />
     <Compile Include="Connect_CheckHSSB.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
